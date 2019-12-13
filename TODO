@@ -1,0 +1,4 @@
+- howto python unittests? reformat BST
+- CI/CD integration
+    -> run unit tests
+    -> sonarqube
