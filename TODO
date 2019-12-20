@@ -1,4 +1,4 @@
-- howto python unittests? reformat BST
+- create helper bash script, discriminate if running in CI/CD and change commands
+    (lint, test, dep, etc...)
 - CI/CD integration
-    -> run unit tests
-    -> sonarqube
+- Configure pylint (rcfile?)
