@@ -1,3 +1,5 @@
+# Space complexity: constant
+# Time complexity: O(n), n is length of nums array
 def two_sum(nums, target):
     nums_dict = {}
 
