@@ -1,5 +1,8 @@
 - Configure pylint (rcfile?)
 - Configure VIM
-    -> ALE, black & isort?
+    -> ALE, black, isort, pylint, flake8
+        -- configure black (read github)
+            -> remove unused imports automatically
+        -- pylint allow vars with 1 char name
     -> coc.nvim
         language server?

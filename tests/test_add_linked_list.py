@@ -1,5 +1,3 @@
-import sys
-
 from src.add_linked_list import (
     Node,
     add_linked_list_iterative,
