@@ -1,16 +1,16 @@
 PROJECT_NAME := "algopro"
 
-.PHONY: dep
-dep: ## Install dependencies
-	# TODO get req.txt from Pipfile.lock && install all pkgs;
+.PHONY: deps
+deps: ## Install dependencies
+	@./maketools/algopro.sh deps;
 
 .PHONY: lint
 lint: ## Lint modules
-	@pipenv run pylint src tests;
+	@./maketools/algopro.sh lint;
 
 .PHONY: test
 test: ## Run unit_tests /w coverage
-	@pipenv run pytest -v;
+	@./maketools/algopro.sh test;
 
 .PHONY: help
 help: ## Display this help screen

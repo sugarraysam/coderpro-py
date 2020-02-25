@@ -1,4 +1,5 @@
-- create helper bash script, discriminate if running in CI/CD and change commands
-    (lint, test, dep, etc...)
-- CI/CD integration
 - Configure pylint (rcfile?)
+- Configure VIM
+    -> ALE, black & isort?
+    -> coc.nvim
+        language server?
