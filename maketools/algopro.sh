@@ -7,7 +7,7 @@ export AP_BASEDIR=${PWD}
 export AP_ACTION="${AP_ACTION:-$1}"
 
 # Source helper funcs
-source ${AP_BASEDIR}/maketools/_sourced/helpers.sh
+source ${AP_BASEDIR}/maketools/_helpers.sh
 _run_all_helpers
 
 ###
