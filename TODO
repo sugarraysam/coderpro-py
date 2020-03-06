@@ -1,3 +1,6 @@
+- mergesort
+- binarysearch
+
 - Configure pylint (rcfile?)
 - Configure VIM
     -> ALE, black, isort, pylint, flake8
