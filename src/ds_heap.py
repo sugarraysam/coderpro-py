@@ -20,7 +20,6 @@ class MaxHeap(object):
         return idx if idx < self.size else None
 
     def _swap(self, i, j):
-        print(f"DEBUG: swapping {i} with {j}")
         self.nums[i], self.nums[j] = self.nums[j], self.nums[i]
 
     def _ensure_capacity(self):
