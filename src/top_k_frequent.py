@@ -31,17 +31,8 @@ class Solution(object):
         if not self.nums or self.k == 0:
             return []
 
-        counter = itertools.count()
-        most_freq = []
-        # keep i as entry count for tie-breaker
-        for val, count in Counter(self.nums).items():
-            heapq.heappush(
-                most_freq, (count, next(counter), val)
-            )  # sort on count, then counter
-            if len(most_freq) > self.k:
-                heapq.heappop(most_freq)
-
-        return sorted([heapq.heappop(most_freq)[2] for _ in range(self.k)])
+        counter = Counter(self.nums)
+        return sorted(heapq.nlargest(self.k, counter.keys(), key=counter.get))
 
     def heap_oneliner(self):
         return sorted(
