@@ -1,3 +1,9 @@
+- threesum, code constant space solution using twosum and pointers
+    -- write testing for twosums
+    -- write threesum
+    -- watch video @10 min
+
+
 - Configure pylint (rcfile?)
 - Configure VIM
     -> ALE, black, isort, pylint, flake8
