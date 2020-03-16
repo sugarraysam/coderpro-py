@@ -19,28 +19,28 @@ class Node(object):
 
 
 class Solution(object):
-    def __init__(self, L1, L2):
-        self.L1 = L1
-        self.L2 = L2
+    def __init__(self, A, B):
+        self.A = A
+        self.B = B
 
     def set(self):
         """
-        Time complexity: O(max(len(L1), len(L2))
-        Space complexity: O(max(len(L1), len(L2)))
+        Time complexity: O(max(len(A), len(B))
+        Space complexity: O(max(len(A), len(B)))
         """
         # empty case
-        if not self.L1 or not self.L2:
+        if not self.A or not self.B:
             return None
 
         seen = set()
-        # traverse L1
-        curr = self.L1
+        # traverse A
+        curr = self.A
         while curr:
             seen.add(curr)
             curr = curr.next
 
-        # traverse L2
-        curr = self.L2
+        # traverse B
+        curr = self.B
         while curr:
             # found intersection
             if curr in seen:
@@ -58,34 +58,43 @@ class Solution(object):
             curr = curr.next
         return res
 
+    def _len2(self, L):
+        # Tail recursive version
+        def _len(node, acc):
+            if node is None:
+                return acc
+            else:
+                return _len(node.next, acc + 1)
+
+        return _len(L, 0)
+
     def constant(self):
         """
-        Time complexity: O(len(L1)) + O(len(L2)) + O(max(len(L1), len(L2)))
+        Time complexity: O(len(A)) + O(len(B)) + O(max(len(A), len(B)))
         Space complexity: O(1)
         """
         # empty case
-        if not self.L1 or not self.L2:
+        if not self.A or not self.B:
             return None
 
-        len_L1 = self._len(self.L1)
-        len_L2 = self._len(self.L2)
-        curr_L1 = self.L1
-        curr_L2 = self.L2
+        # lenA, lenB = self._len(self.A), self._len(self.B)
+        lenA, lenB = self._len2(self.A), self._len2(self.B)
+        currA, currB = self.A, self.B
 
         # synchronize
-        if len_L1 > len_L2:
-            for _ in range(len_L1 - len_L2):
-                curr_L1 = curr_L1.next
+        if lenA > lenB:
+            for _ in range(lenA - lenB):
+                currA = currA.next
         else:
-            for _ in range(len_L2 - len_L1):
-                curr_L2 = curr_L2.next
+            for _ in range(lenB - lenA):
+                currB = currB.next
 
         # find intersection
-        while curr_L1 and curr_L2:
-            if curr_L1 is curr_L2:
-                return curr_L1
-            curr_L1 = curr_L1.next
-            curr_L2 = curr_L2.next
+        while currA and currB:
+            if currA is currB:
+                return currA
+            currA = currA.next
+            currB = currB.next
 
         return None
 
