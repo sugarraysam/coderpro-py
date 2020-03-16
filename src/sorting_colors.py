@@ -6,36 +6,45 @@ class Solution(object):
         self.nums = nums
         self.len = len(nums)
 
+    def _swap(self, i, j):
+        self.nums[i], self.nums[j] = self.nums[j], self.nums[i]
+
+    def bubble(self):
+        """
+        Time complexity: O(n^2)
+        Space complexity: O(1) - inplace
+        """
+        for i in range(self.len):
+            for j in range(i + 1, self.len):
+                if self.nums[j] < self.nums[i]:
+                    self._swap(j, i)
+        return self.nums
+
     def quicksort(self):
-        def _swap(i, j):
-            self.nums[i], self.nums[j] = self.nums[j], self.nums[i]
+        """
+        Time complexity: O(nlogn)
+        Space complexity: O(1) - inplace
+        """
 
         def _quicksort(start, end):
-            print(f"DEBUG, {self.nums[start:end]}")
             # base case, only sort lists of 2+ elements
-            if end - start <= 1:
+            if end - start < 1:
                 return
-            pivot = random.choice(self.nums[start:end])
-            left = start
-            right = end - 1
+            pivot, left, right = random.choice(self.nums[start : end + 1]), start, end
             while left <= right:
                 # find value > pivot
-                while left < end and self.nums[left] < pivot:
+                while self.nums[left] < pivot:
                     left += 1
                 # find value < pivot
-                while right >= start and self.nums[right] > pivot:
+                while self.nums[right] > pivot:
                     right -= 1
-
+                # swap
                 if left <= right:
-                    _swap(left, right)
+                    self._swap(left, right)
                     left += 1
                     right -= 1
+            _quicksort(start, right)
+            _quicksort(left, end)
 
-            # quicksort low N high part
-            _quicksort(start, left)
-            _quicksort(right, end)
-
-        # sort in place - empty case check
-        if self.len > 1:
-            _quicksort(0, self.len)
+        _quicksort(0, self.len - 1)
         return self.nums
