@@ -1,5 +1,4 @@
 import heapq
-import itertools
 from collections import Counter, defaultdict
 
 from src.ds_heap import MaxHeap

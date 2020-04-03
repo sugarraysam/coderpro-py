@@ -1,16 +1,26 @@
-PROJECT_NAME := "algopro"
+export PIPENV_VENV_IN_PROJECT=1
+
+debug:
+	@echo ${TESTDIR};
 
 .PHONY: deps
 deps: ## Install dependencies
-	@./maketools/algopro.sh deps;
+	@pip3 install --user -U pipenv pip
+	@if [ ! -d "$(PWD)/.venv" ]; then \
+		pipenv install --dev; \
+	else \
+		pipenv update && pipenv clean; \
+	fi
 
 .PHONY: lint
 lint: ## Lint modules
-	@./maketools/algopro.sh lint;
+	@pipenv run flake8 --exclude=.venv/ --statistics --show-source --max-line-length=80 .
+	@pipenv run pylint src tests
 
 .PHONY: test
 test: ## Run unit_tests /w coverage
-	@./maketools/algopro.sh test;
+	@pipenv run coverage run --include="src/*" -m pytest -v
+	@pipenv run coverage report
 
 .PHONY: help
 help: ## Display this help screen
