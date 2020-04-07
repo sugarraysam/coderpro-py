@@ -48,3 +48,39 @@ class Solution(object):
 
         _quicksort(0, self.len - 1)
         return self.nums
+
+    def hashmap(self):
+        """
+        Time complexity: O(n)
+        Space complexity: O(n)
+        """
+        if self.len < 2:
+            return self.nums
+
+        d = {0: 0, 1: 0, 2: 0}
+        for n in self.nums:
+            d[n] += 1
+
+        return ([0] * d[0]) + ([1] * d[1]) + ([2] * d[2])
+
+    def pointers(self):
+        """
+        Time complexity: O(n)
+        Space complexity: O(1)
+        """
+        if self.len < 2:
+            return self.nums
+        next0, curr, next2 = 0, 0, self.len - 1
+
+        while curr <= next2:
+            if self.nums[curr] == 0:
+                self._swap(next0, curr)
+                next0 += 1
+                curr += 1
+            elif self.nums[curr] == 2:
+                self._swap(next2, curr)
+                next2 -= 1
+            else:
+                curr += 1
+
+        return self.nums

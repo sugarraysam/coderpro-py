@@ -1,8 +1,5 @@
 export PIPENV_VENV_IN_PROJECT=1
 
-debug:
-	@echo ${TESTDIR};
-
 .PHONY: deps
 deps: ## Install dependencies
 	@pip3 install --user -U pipenv pip
