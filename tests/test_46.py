@@ -1,4 +1,5 @@
 from src.ap46_invert_bintree import Node
+from copy import deepcopy
 
 TREE1 = Node(
     0,
@@ -20,10 +21,18 @@ TREE3_INV = Node(0, left=Node(1, left=Node(2, left=Node(3))))
 
 def test_ap46_invert_bintree():
     cases = [
+        {"in": Node(0), "want": Node(0)},
         {"in": TREE1, "want": TREE1_INV},
         {"in": TREE2, "want": TREE2_INV},
         {"in": TREE3, "want": TREE3_INV},
     ]
     for c in cases:
-        c["in"].invert()
-        assert c["in"] == c["want"]
+        # recursion
+        c_rec = deepcopy(c["in"])
+        c_rec.invert_rec()
+        assert c_rec == c["want"]
+
+        # iterative
+        c_it = deepcopy(c["in"])
+        c_it.invert_it()
+        assert c_it == c["want"]

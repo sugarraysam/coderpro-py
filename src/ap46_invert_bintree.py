@@ -4,15 +4,26 @@ class Node(object):
         self.left = left
         self.right = right
 
-    def invert(self):
+    def invert_rec(self):
         def _invert(root):
             if root is None:
-                return
+                return None
             root.left, root.right = root.right, root.left
             _invert(root.left)
             _invert(root.right)
 
-        _invert(self)
+        return _invert(self)
+
+    def invert_it(self):
+        neighbors = [self]
+        while neighbors:
+            root = neighbors.pop()
+            if root is None:
+                continue
+            root.left, root.right = root.right, root.left
+            neighbors += [root.left, root.right]
+
+        return None
 
     def __eq__(self, other):
         def _helper(curr, other):
