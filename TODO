@@ -1,7 +1,0 @@
-###
-### Problem solving
-###
-- debug - sorting colors, # 36
-- Makefile pipenv check (always run this command)
-- create testdir dynamically /w $mktemp, and clean at the end (always)
-- output .coverage to .testing/ directory

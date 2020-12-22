@@ -9,3 +9,7 @@ __pycache__
 
 # coverage
 .coverage
+
+# python pkg stuff
+**/*.egg-info/*
+pyproject.toml

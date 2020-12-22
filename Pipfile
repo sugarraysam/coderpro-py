@@ -7,9 +7,9 @@ verify_ssl = true
 flake8 = "*"
 pylint = "*"
 pytest = "*"
-
-[packages]
 coverage = "*"
+coveralls = "*"
+core = {editable = true, path = "./core"}
 
 [requires]
 python_version = "3.8"
