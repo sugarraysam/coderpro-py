@@ -1,4 +1,4 @@
-# CoderPro [![Coverage Status](https://coveralls.io/repos/github/sugarraysam/coderpro/badge.svg?branch=main)](https://coveralls.io/github/sugarraysam/coderpro?branch=main)
+# CoderPro Python [![Coverage Status](https://coveralls.io/repos/github/sugarraysam/coderpro/badge.svg?branch=main)](https://coveralls.io/github/sugarraysam/coderpro?branch=main)
 
 Solutions for [CoderPro](https://www.techseries.dev/products/coderpro) series. Walkthrough of popular interview questions in python.
 
