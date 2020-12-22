@@ -1,7 +1,9 @@
 language: python
 python:
   - "3.8"
-install: make deps
+install:
+  - pip3 install -U pip pipenv
+  - pipenv install --dev
 script:
   - make test
   - coveralls
