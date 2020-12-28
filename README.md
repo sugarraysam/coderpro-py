@@ -1,6 +1,8 @@
-# CoderPro Python [![Build Status](https://www.travis-ci.com/sugarraysam/coderpro-py.svg?branch=master)](https://www.travis-ci.com/sugarraysam/coderpro-py) [![Coverage Status](https://coveralls.io/repos/github/sugarraysam/coderpro-py/badge.svg?branch=master)](https://coveralls.io/github/sugarraysam/coderpro-py?branch=master)
+# CoderPro (Part 1) [![Build Status](https://www.travis-ci.com/sugarraysam/coderpro-py.svg?branch=master)](https://www.travis-ci.com/sugarraysam/coderpro-py) [![Coverage Status](https://coveralls.io/repos/github/sugarraysam/coderpro-py/badge.svg?branch=master)](https://coveralls.io/github/sugarraysam/coderpro-py?branch=master)
 
 Solutions for [CoderPro](https://www.techseries.dev/products/coderpro) series. Walkthrough of popular interview questions in python.
+
+View [Part 2 in C++: `sugarraysam/coderpro-cpp`](https://github.com/sugarraysam/coderpro-cpp).
 
 I provided a complexity analysis of both memory and time for every solution. I am not sharing the problems as this is a proprietary product.
 
