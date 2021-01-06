@@ -1,14 +1,14 @@
-TARGETS := "deps test help"
+TARGETS := "install test help"
 .PHONY: $(TARGETS)
 
 export PIPENV_VENV_IN_PROJECT=1
 
-deps:
+install:
 	@pip3 install --user -U pipenv pip
 	@pipenv install --dev
 
 test:
-	@pipenv run coverage run --include="./core/src/*" -m pytest -v ./core
+	@pipenv run coverage run --include="./core/src/**/*" -m pytest -v ./core
 	@pipenv run coverage report
 
 help:

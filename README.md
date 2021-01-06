@@ -8,13 +8,15 @@ I provided a complexity analysis of both memory and time for every solution. I a
 
 I changed the naming convention to `cp##_<descriptive_name>.py` when I realized this project was growing like crazy.
 
+And then again to `cpXX/<source>.py` and `cpXX/<source>_test.py`.
+
 # Test
 
 You can run the full test suite:
 
 ```bash
 # Install python dependencies
-$ make deps
+$ make install
 
 # Run tests /w coverage statistics
 $ make test
