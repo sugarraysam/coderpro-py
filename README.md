@@ -2,13 +2,16 @@
 
 Solutions for [CoderPro](https://www.techseries.dev/products/coderpro) series. Walkthrough of popular interview questions in python.
 
-View [Part 2 in C++: `sugarraysam/coderpro-cpp`](https://github.com/sugarraysam/coderpro-cpp).
+View:
+
+- [Part 2 in C++: `sugarraysam/coderpro-cpp`](https://github.com/sugarraysam/coderpro-cpp).
+- [Part 3 in Golang: `sugarraysam/coderpro-go`](https://github.com/sugarraysam/coderpro-go).
 
 I provided a complexity analysis of both memory and time for every solution. I am not sharing the problems as this is a proprietary product.
 
 I changed the naming convention to `cp##_<descriptive_name>.py` when I realized this project was growing like crazy.
 
-And then again to `cpXX/<source>.py` and `cpXX/<source>_test.py`.
+And then again to `cpXX/<source>.py` and `cpXX/test_<source>.py`.
 
 # Test
 
